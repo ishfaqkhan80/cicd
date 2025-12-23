@@ -1,4 +1,9 @@
 import express, { Request, Response } from 'express';
+import { initializeDatabase } from './db/database.js';
+import { booksRouter } from './routes/books.js';
+
+// Initialize database
+initializeDatabase();
 
 export const app = express();
 
@@ -9,3 +14,6 @@ app.use(express.json());
 app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok' });
 });
+
+// API routes
+app.use('/api/books', booksRouter);
