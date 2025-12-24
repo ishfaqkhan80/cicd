@@ -21,8 +21,8 @@ describe('Books API Integration Tests', () => {
 
     it('should return all books', async () => {
       // Arrange: Create test books
-      const book1 = repository.create({ title: 'Book 1', author: 'Author 1', year: 2020 });
-      const book2 = repository.create({ title: 'Book 2', author: 'Author 2', year: 2021 });
+      repository.create({ title: 'Book 1', author: 'Author 1', year: 2020 });
+      repository.create({ title: 'Book 2', author: 'Author 2', year: 2021 });
 
       // Act
       const response = await request(app).get('/api/books');

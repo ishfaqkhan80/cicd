@@ -53,7 +53,7 @@ booksRouter.post('/', (req: Request, res: Response) => {
   try {
     const book = repository.create(input);
     res.status(201).json(book);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to create book' });
   }
 });
@@ -78,7 +78,7 @@ booksRouter.put('/:id', (req: Request, res: Response) => {
     }
 
     res.json(book);
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Failed to update book' });
   }
 });
