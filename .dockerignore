@@ -1,0 +1,33 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Build output
+dist
+
+# Test files
+**/*.test.ts
+coverage
+test-results
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# Environment files
+.env
+.env.local
+
+# Documentation
+*.md
+!README.md
+
+# CI/CD
+.github
+
+# Data
+data/*.db
