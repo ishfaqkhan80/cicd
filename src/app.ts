@@ -10,6 +10,18 @@ export const app = express();
 // Middleware for parsing JSON
 app.use(express.json());
 
+// Root endpoint
+app.get('/', (req: Request, res: Response) => {
+  res.json({
+    message: 'Books API',
+    version: '1.0.0',
+    endpoints: {
+      health: '/health',
+      books: '/api/books'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok' });
